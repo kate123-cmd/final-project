@@ -17,6 +17,10 @@ def emot_detector():
     # Pass the text to the emotion_detector function and store the response
     response = emotion_detector(text_to_analyze)
     
+     # Check for invalid/blank input
+    if response['dominant_emotion'] is None:
+        return "Invalid text! Please try again!"
+    
     return (
     "For the given statement, the system response is "
     "'anger': {}, "
